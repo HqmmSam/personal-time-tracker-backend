@@ -267,3 +267,4 @@ print(query.statement.compile(compile_kwargs={"literal_binds": True}))
 | `ModuleNotFoundError: No module named 'app'` | 不在 `backend/` 目录下执行 | 确保在 `backend/` 目录内运行 `uvicorn` |
 | `422 Unprocessable Entity` | 请求字段校验失败 | 查看响应体 `detail` 字段，确认传参格式 |
 | `401 Unauthorized` | token 缺失或过期 | Swagger 页面重新 Authorize，或重新登录获取新 token |
+| `password cannot be longer than 72 bytes` | bcrypt 版本或密码哈希依赖不一致 | 重新执行 `pip install -r requirements.txt`，并重启 `uvicorn` |
